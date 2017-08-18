@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]*)$ index.php?m=content&c=index&a=lists&catid=$1&page=$2&%{QUERY_STRING}
+
+RewriteRule ^uploadfile/([0-9]+)/([0-9]+)/([\s\S]+) /uploadfile/$1/$2/$3
+RewriteRule ^([\s\S]+)/uploadfile/([0-9]+)/([0-9]+)/([\s\S]+) ../uploadfile/$2/$3/$4
+
+RewriteRule ^content-([0-9]+)-([0-9]+)-([0-9]+).html index.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3&%{QUERY_STRING}
+RewriteRule ^show-([0-9]+)-([0-9]+)-([0-9]+).html index.php?m=content&c=index&a=show&catid=$1&id=$2&page=$3&%{QUERY_STRING}
+RewriteRule ^list-([0-9]+)-([0-9]+).html index.php?m=content&c=index&a=lists&catid=$1&page=$2&%{QUERY_STRING}
