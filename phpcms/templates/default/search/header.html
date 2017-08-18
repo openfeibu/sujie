@@ -1,0 +1,93 @@
+<?php
+    $search = $data;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+  <meta name="keywords" content="{$SEO['keyword']}">
+  <meta name="description" content="{$SEO['description']}">
+    <link rel="stylesheet" href="{CSS_PATH}/sujie/styles/css.css?v={php echo time();}">
+    <script src="{CSS_PATH}/sujie/js/jquery-1.7.2.min.js"></script>
+    <script src="{CSS_PATH}/sujie/js/main.js"></script>
+</head>
+<body>
+<!--顶部-->
+<div class="outW bg1">
+    <div class="inW topAr">
+        <span class="txt">
+        Hi，欢迎来到速捷财税！
+        </span>
+        <span class="tel">
+            联系我们：{$CATEGORYS[27][catname]}
+        </span>
+    </div>
+</div>
+<!--顶部 end-->
+
+<!--搜索-->
+<div class="outW">
+    <div class="inW searchAr">
+        <!--logo-->
+      <div class="logo inb">
+          <a href="{siteurl($siteid)}"> <img src="{CSS_PATH}/sujie/images/logo.png" alt=""></a>
+      </div>
+        <!--logo end-->
+        <div class="rightDiv inb">
+            <div class="search inb">
+              <form action="{APP_PATH}index.php" method="get" target="_target">
+          <input type="hidden" name="m" value="search"/>
+          <input type="hidden" name="c" value="index"/>
+          <input type="hidden" name="a" value="init"/>
+          <input type="hidden" name="typeid" value="54" id="typeid"/>
+          <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                    <div class="inputTxt">
+                        <input class="text" type="text" placeholder="请输入你查找的内容" name="q" id="q">
+                        <input class="btn" type="submit" value="">
+                    </div>
+                </form>
+            </div>
+            <div class="classify ">
+                <div class="index-nav dib">
+                      <div id="navlist" class="list">
+                        <ul id="navfouce" class="m0 clearfix">
+                          {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+                          {loop $data $r}
+                          <li><a href="{$r[url]}">{$r[catname]}</a></li>
+                          {/loop}
+                          {/pc}
+                        </ul>
+                      </div>
+                      <div id="navbox" style="height: 0px; opacity: 0; overflow: hidden;" class="box">
+                        {php $i=0}
+                        {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+                        {loop $data $r1}
+                            {php $i =1 }
+                            <div {if $i == 1}style="display:none"{else}style=""{/if} class="cont">
+                                <ul class="index-sublist">
+                                {pc:content action="category" catid="$r1['catid']" num="25" siteid="$siteid" order="listorder ASC"}
+                                {loop $data $r2}
+                                <li class="clearfix"><h3 class="mcate-item-hd"><a href="{$r2[url]}" >{$r2[catname]}</a></h3>
+                                  <p class="mcate-item-bd">
+                                    {pc:content action="category" catid="$r2['catid']" num="25" siteid="$siteid" order="listorder ASC"}
+                                    {loop $data $r3}
+                                    <a href="{$r2[url]}" class="recom">{$r3[catname]}</a>
+                                    {/loop}
+                                    {/pc}
+                                  </p>
+                                </li>
+                                {/loop}
+                                {/pc}
+                                </ul>
+                            </div>
+                        {/loop}
+                        {/pc}
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--搜索 end-->

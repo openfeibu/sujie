@@ -1,0 +1,27 @@
+{template "search","header"}
+<div class="outW">
+    <div class="inW">
+		 <!--内容-->
+	    <div class="loca" id="content">
+	        <div class="locaCon">
+				{loop $search $k $v}
+	            <div class="locaConChil">
+	                <a href="{$v[url]}" class="locaConChilA">
+		                <img src="{$v['thumb']}" alt="{$v['title']}">
+		                 	{$v['title']}
+		                <br>
+	                    <span> {$v['price']}</span>
+	                </a>
+	            </div>
+				{/loop}
+				{if empty($search)}未找到结果{/if}
+				<div class="clear"></div>
+	        </div>
+			<div class="clear"></div>
+	        <div class="server_page">
+	           	{$pages}
+	        </div>
+	    </div>
+    </div>
+</div>
+{template "content","footer"}

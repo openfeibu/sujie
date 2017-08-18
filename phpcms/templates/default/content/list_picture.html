@@ -1,0 +1,32 @@
+{template "content","header"}
+
+<!--内容-->
+<div class="outW box">
+
+    <div class="inW exCon">
+
+	    {pc:content  action="lists"  order="id DESC" catid="$catid" thumb="1" num="16" page="$page"}
+		{loop $data $k $v}
+        <div class="exconChil">
+            <a href="{$v[url]}"><img  src="{$v['thumb']}" alt="{$v[title]}"></a>
+            <div class="chiltxt">
+                <a class="chiltxtA1" href="{$v[url]}">{$v['title']}</a>
+                <a  class="chiltxtA2" href="{$v[url]}">{$v['description']}</a>
+            </div>
+        </div>
+		{/loop}
+		{/pc}
+       <div class="inW cen">
+
+
+        <div class="server_page">
+            {$pages}
+        </div>
+
+       </div>
+    </div>
+
+</div>
+<!--内容 end-->
+
+{template "content","footer"}

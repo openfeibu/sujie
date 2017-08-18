@@ -1,0 +1,42 @@
+{template "content","header"}
+
+<!--内容-->
+<div class="outW">
+    <div class="inW">
+	    <span class="locaing">当前位置：<a href="{siteurl($siteid)}">首页</a> > {catpos($catid)}</span>
+		<div class="common-pro">
+
+        <div class="common-list">
+            <ul>
+	            {pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
+	            {loop $data $r}
+	            <?php
+					$time = $r['inputtime'];
+					$date = date('Y-m',$time);
+					$day = date('d',$time);
+	            ?>
+                <li>
+                    <div class="common-ll"><p>{$date}</p><span>{$day}</span></div>
+                    <div class="common-lr">
+                        <dl>
+                            <dt><a href="{$r['url']}" title="{$r['title']}" target="_blank">{$r['title']}</a></dt>
+                            <p><a href="{$r['url']}" title="{$r['description']}" target="_blank">　　{$r['description']}</a></p>
+                        </dl>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                {/loop}
+				{/pc}
+            </ul>
+        </div>
+
+
+        <div class="inW cen">
+            {$pages}
+        </div>
+       	</div>
+    </div>
+</div>
+<!--内容 end-->
+
+{template "content","footer"}

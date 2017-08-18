@@ -1,0 +1,31 @@
+{template "content","header"}
+<!--内容-->
+<div class="outW">
+	<div class="inW">
+		<span class="locaing">当前位置：<a href="{siteurl($siteid)}">首页</a> > {catpos($catid)}</span>
+		<div class="details-page">
+		    <div class="crumbs">
+		      
+			    <div class="details-bg  wrap clear">
+			        <div class="details-con">
+			            <h1>{$title}</h1>
+			            <div class="details-tag">
+			                <span>时间：{$inputtime} 点击：<em id="hits"><span id="hits"></span></em>次</span><script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script> 
+			            </div>
+			            <div class="cont">
+			               <p>{$content}</p>  
+			            </div>
+
+			            <div class="details-dt">
+				    		上一篇：<a href="{$previous_page[url]}" title="{$previous_page[title]}">{$previous_page[title]}</a><br>下一篇：<a href="{$next_page[url]}" title="{$next_page[title]}">{$next_page[title]}</a>
+				    	</div>
+			        </div>
+			    </div>
+		    </div>
+		</div>
+	</div>
+</div>
+<!--内容 end-->
+
+
+{template "content","footer"}

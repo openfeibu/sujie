@@ -1,0 +1,55 @@
+<!--底部-->
+<div class="outW bottomAr">
+    <img src="{CSS_PATH}/sujie/images/home_BotBanner.png" alt="">
+
+    <div class="outW bgWin">
+        <div class="inW">
+           <div class="bottomCon">
+               <div class="img inb">
+               <img src="{CSS_PATH}/sujie/images/logo2.png" alt="">
+               </div>
+               <ul>
+					<li class="title">速捷财税</li>
+					<li><a href="{$CATEGORYS[22][url]}">{$CATEGORYS[22][catname]}</a></li>
+					<li><a href="{$CATEGORYS[23][url]}">{$CATEGORYS[23][catname]}</a></li>
+					<li><a href="{$CATEGORYS[24][url]}">{$CATEGORYS[24][catname]}</a></li>
+					<li><a href="{$CATEGORYS[25][url]}">{$CATEGORYS[25][catname]}</a></li>
+               </ul>
+               <ul>
+                   	<li class="title">服务项目</li>
+                   	{pc:content action="category" catid="161" num=5 siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+					<li><a href="{$r[url]}">{$r[catname]}</a></li>
+					{/loop}
+					{/pc}
+
+               </ul>
+               <ul>
+                   	<li class="title">公司注册</li>
+                   	{pc:content action="category" catid="13"  num=5 siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+					<li><a href="{$r[url]}">{$r[catname]}</a></li>
+					{/loop}
+					{/pc}
+               </ul>
+               <ul>
+                   	<li class="title">财税记账</li>
+                   	{pc:content action="category" catid="18"  num=5 siteid="$siteid" order="listorder ASC"}
+					{loop $data $r}
+					<li><a href="{$r[url]}">{$r[catname]}</a></li>
+					{/loop}
+					{/pc}
+               </ul>
+               <div class="inb contact">
+            <div class="tel">{$CATEGORYS[27][catname]}</div>
+            <div class="mail">{$CATEGORYS[28][catname]}</div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+<!--底部 end-->
+</body>
+</html>

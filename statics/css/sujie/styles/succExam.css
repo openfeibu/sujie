@@ -1,0 +1,43 @@
+.box {
+    border-top:1px solid #dddddd;
+}
+
+.cen {
+    text-align: center;
+}
+.box .exCon .exconChil {
+    margin-top:50px;
+    margin-bottom: 25px;
+    padding-bottom: 30px;
+    border-bottom:1px solid #dddddd ;
+}
+.box .exCon .nobor {
+    border-bottom: 1px solid transparent;
+}
+.box .exconChil img {
+    float: left;
+}
+.box .exconChil .chiltxt {
+    height: 230px;
+    margin-left: 386px;
+}
+.exconChil .chiltxt a {
+    text-decoration: none;
+    display: inline-block;
+    /*margin: 64px 0 23px 0;*/
+   color: #333333;
+}
+.box .exconChil .chiltxt .chiltxtA1:hover{color: #65b4ec}
+.box .exconChil .chiltxt .chiltxtA1 {
+    margin: 64px 0 23px 0;
+   font-size: 24px;
+    color: #333333;
+}
+.box .exconChil .chiltxt .chiltxtA2 {
+    font-size: 14px;
+    line-height: 30px;
+    color: #333333;
+}
+.exconChil .chiltxt .chiltxtA2:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+{template "content","header"}
+<!--内容-->
+<div class="outW">
+	<div class="inW">
+		<span class="locaing">当前位置：<a href="{siteurl($siteid)}">首页</a> > {catpos($catid)}</span>
+		<div class="details-page">
+		    <div class="crumbs">
+		      
+			    <div class="details-bg  wrap clear">
+			        <div class="details-con">
+			            <h1>{$title}</h1>
+
+			            <div class="cont">
+			               <p>{$content}</p>  
+			            </div>
+			        </div>
+			    </div>
+		    </div>
+		</div>
+	</div>
+</div>
+<!--内容 end-->
+
+
+{template "content","footer"}

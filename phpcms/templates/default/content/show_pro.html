@@ -1,0 +1,25 @@
+{template "content","header"}
+<!--内容-->
+<div class="outW bor">
+    <div class="inW">
+            <div class="serverListCon">
+                <div id="imgA"><img src="{$thumb}" alt="{$title}"></div>
+                <div class="buy">
+                    <h1>{$title}</h1>
+                    <p>{$description}</p>
+                    <div class="goBuy">
+                        <p>费用合计： <span>￥{$price}</span></p>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    <div class="inW proDetail bor2">
+        <h3>产品详情</h3>
+        <div class="pro">
+			{$content}
+        </div>
+    </div>
+</div>
+<!--内容 end-->
+{template "content","footer"}

@@ -1,0 +1,49 @@
+{template "content","header"}
+
+
+<div class="outW">
+    <!--banner -->
+    <div class="inW center">
+        <div class="serverBanner">
+        <img src="{CSS_PATH}/sujie/images/server_banner.jpg" alt="">
+
+    </div>
+    <!--banner end-->
+
+    <!--内容-->
+    <div class="loca" id="content">
+         <span class="locaing">当前位置：<a href="{siteurl($siteid)}">首页</a> > {catpos($catid)}</span>
+         <p class="locaSer">
+            {$CAT[catname]}：
+            {pc:content action="category" catid="$catid" siteid="$siteid" order="listorder ASC" num="l6"}
+			{loop $data $r}
+			<a href="{$r[url]}#content">{$r[catname]}</a>
+			{/loop}
+			{/pc}
+
+        </p>
+        <div class="locaCon">
+			{pc:content  action="lists"  order="id DESC" catid="$catid" thumb="1" num="16" page="$page"}
+			{loop $data $k $v}
+            <div class="locaConChil">
+                <a href="{$v[url]}" class="locaConChilA">
+	                <img src="{$v['thumb']}" alt="{$v['title']}">
+	                 	{$v['title']}
+	                <br>
+                    <span> {$v['price']}</span>
+                </a>
+            </div>
+			{/loop}
+			{/pc}
+        </div>
+		<div class="clear"></div>
+        <div class="server_page">
+           	{$pages}
+        </div>
+    </div>
+    <!--内容 end-->
+
+    </div>
+</div>
+
+{template "content","footer"}

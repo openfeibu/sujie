@@ -1,0 +1,435 @@
+{template "content","header"}
+
+
+<!--banner-->
+<div class="outW banner">
+    <div class="bannerDiv">
+        <ul>
+	        {pc:content action="category" catid="29" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<li><a href="javascript:;"><img src="{$r[image]}" alt="{$r[catname]}"></a></li>
+			{/loop}
+			{/pc}
+        </ul>
+    </div>
+    <ol>
+	    {php $bool = true;}
+	    {pc:content action="category" catid="29" siteid="$siteid" order="listorder ASC"}
+		{loop $data $r}
+		<li {if $bool}class="liAdd"{/if}><a href="#"></a></li>
+		{php $bool = false;}
+		{/loop}
+		{/pc}
+    </ol>
+</div>
+<!--banner end-->
+
+
+
+<!--服务套餐-->
+<div class="outW bg1 serverAr">
+    <div class="inW server">
+         <h1 class="Title">服务套餐</h1>
+        <div class="line"></div>
+        <!--content-->
+
+        <div class="serboxAll">
+            <div class="serbox serbox1 wi470">
+
+                <div class="smaBig left-180">
+                    <div class="small small1">
+                        <h3>公司注册
+                            <br>
+                        <span>让公司没有难办的事</span>
+                        </h3>
+                        <ul>
+							{pc:content  action="lists"  order="id DESC" catid="43" num="5"}
+							{loop $data $k $v}
+                            <li><a href="{$v[url]}">{$v[title]}&nbsp;></a></li>
+							{/loop}
+							{/pc}
+
+
+                        </ul>
+                    </div>
+                    <div class="big big1">
+                        <span></span>
+                        <h3>公司注册
+                            <br>
+                        <span>让公司没有难办的事</span>
+                        </h3>
+                        <ul class="bigUl">
+                            <li class="li1">
+							{pc:content action="lists" order="id DESC" catid="43" moreinfo="1" num="1"}
+							{loop $data $n $r}
+					
+								<div>
+									<h3>{$r['title']}</h3>
+									<br>
+									<dl>{str_cut(strip_tags($v[description]),50,"...")}</dl>
+									<br>
+									<dl>价格：￥<span class="priCol">{$r['price']}</span></dl>
+
+								</div>
+								<a href="{$r['url']}" >查看详情</a>
+							{/loop}
+							{/pc}
+                            </li>
+
+
+							{pc:content  action="lists"  order="id DESC" catid="43" moreinfo="1" num="5"}
+							{loop $data $k $v}
+							<li>
+                                <h3>{$v['title']}</h3>
+                                <br>
+                                <span>{str_cut(strip_tags($v[description]),20,"...")}￥{$v['price']}</span>
+                                <br>
+                                <a href="{$v['url']}">查看详情</a>
+                            </li>
+							{/loop}
+							{/pc}
+                           
+                            <li style="visibility: hidden;">
+                                <h3></h3>
+                                <br>
+                                <span></span>
+                                <br>
+                                <a href="#"></a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="serbox serbox1">
+
+                <div class="smaBig">
+                    <div class="small small1">
+                        <h3>公司变更
+
+                            <br>
+                        <span>为您的合法权益保驾护航</span>
+                        </h3>
+                        <ul>
+                            {pc:content  action="lists"  order="id DESC" catid="44" num="5"}
+							{loop $data $k $v}
+                            <li><a href="{$v[url]}">{$v[title]}&nbsp;></a></li>
+							{/loop}
+							{/pc}
+                        </ul>
+                    </div>
+                    <div class="big big1 big2">
+                        <span></span>
+                        <h3>公司变更
+                            <br>
+                        <span>让公司没有难办的事</span>
+                        </h3>
+                        <ul class="bigUl">
+                            <li class="li1">
+							{pc:content action="lists" order="id DESC" catid="44" moreinfo="1" num="1"}
+							{loop $data $n $r}
+					
+								<div>
+									<h3>{$r['title']}</h3>
+									<br>
+									<dl>{str_cut(strip_tags($v[description]),50,"...")}</dl>
+									<br>
+									<dl>价格：￥<span class="priCol">{$r['price']}</span></dl>
+
+								</div>
+								<a href="{$r['url']}" >查看详情</a>
+							{/loop}
+							{/pc}
+                            </li>
+
+
+
+                            {pc:content  action="lists"  order="id DESC" catid="44" moreinfo="1" num="5"}
+							{loop $data $k $v}
+							<li>
+                                <h3>{$v['title']}</h3>
+                                <br>
+                                <span>{str_cut(strip_tags($v[description]),20,"...")}￥{$v['price']}</span>
+                                <br>
+                                <a href="{$v['url']}">查看详情</a>
+                            </li>
+							{/loop}
+							{/pc}
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="serbox serbox1">
+
+                <div class="smaBig">
+                    <div class="small small1">
+                        <h3>公司注销
+                            <br>
+                        <span>记账纳税不再有问题</span>
+                        </h3>
+                        <ul>
+                            {pc:content  action="lists"  order="id DESC" catid="45" num="5"}
+							{loop $data $k $v}
+                            <li><a href="{$v[url]}">{$v[title]}&nbsp;></a></li>
+							{/loop}
+							{/pc}
+                        </ul>
+                    </div>
+                    <div class="big big1 big3">
+                        <span></span>
+                        <h3>公司注销
+                            <br>
+                        <span>让公司没有难办的事</span>
+                        </h3>
+                        <ul class="bigUl">
+                            <li class="li1">
+							{pc:content action="lists" order="id DESC" catid="45" moreinfo="1" num="1"}
+							{loop $data $n $r}
+					
+								<div>
+									<h3>{$r['title']}</h3>
+									<br>
+									<dl>{str_cut(strip_tags($v[description]),50,"...")}</dl>
+									<br>
+									<dl>价格：￥<span class="priCol">{$r['price']}</span></dl>
+
+								</div>
+								<a href="{$r['url']}" >查看详情</a>
+							{/loop}
+							{/pc}
+                            </li>
+
+
+
+							{pc:content  action="lists"  order="id DESC" catid="45" moreinfo="1" num="5"}
+							{loop $data $k $v}
+							<li>
+                                <h3>{$v['title']}</h3>
+                                <br>
+                                <span>{str_cut(strip_tags($v[description]),20,"...")}￥{$v['price']}</span>
+                                <br>
+                                <a href="{$v['url']}">查看详情</a>
+                            </li>
+							{/loop}
+							{/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="serbox serbox1">
+
+                <div class="smaBig">
+                    <div class="small small1">
+                        <h3>代理记账
+                            <br>
+                        <span>轻松应对各类资质审批</span>
+                        </h3>
+                        <ul>
+                            {pc:content  action="lists"  order="id DESC" catid="19" num="5"}
+							{loop $data $k $v}
+                            <li><a href="{$v[url]}">{$v[title]}&nbsp;></a></li>
+							{/loop}
+							{/pc}
+                        </ul>
+                    </div>
+                    <div class="big big1 big">
+                        <span></span>
+                        <h3>代理记账
+                            <br>
+                        <span>让公司没有难办的事</span>
+                        </h3>
+                        <ul class="bigUl">
+                            <li class="li1">
+							{pc:content action="lists" order="id DESC" catid="19" moreinfo="1" num="1"}
+							{loop $data $n $r}
+					
+								<div>
+									<h3>{$r['title']}</h3>
+									<br>
+									<dl>{str_cut(strip_tags($v[description]),50,"...")}</dl>
+									<br>
+									<dl>价格：￥<span class="priCol">{$r['price']}</span></dl>
+
+								</div>
+								<a href="{$r['url']}" >查看详情</a>
+							{/loop}
+							{/pc}
+                            </li>
+
+                            {pc:content  action="lists" order="id DESC" catid="19" moreinfo="1" num="5"}
+							{loop $data $k $v}
+							<li>
+                                <h3>{$v['title']}</h3>
+                                <br>
+                                <span>{str_cut(strip_tags($v[description]),20,"...")}￥{$v['price']}</span>
+                                <br>
+                                <a href="{$v['url']}">查看详情</a>
+                            </li>
+							{/loop}
+							{/pc}
+                             <li style='border: none;'>
+                                <h3></h3>
+                                <br>
+                                <span></span>
+                                <br>
+                                <a href="#"></a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content end-->
+    </div>
+</div>
+<!--服务套餐 end-->
+
+<!--服务项目-->
+<!-- <div class="outW bg1 serverAr">
+    <div class="inW server">
+         <h1 class="Title">服务业务</h1>
+        <div class="line"></div>
+        <p class="eng">
+            No one lights a lamp in order to hide it behind the door: <br>
+            the purpose of light is to create more light, to open people’s eyes, <br>
+            to reveal the marvels around.
+        </p>
+        <div class="wordAr">
+            <a href="{$CATEGORYS[9][url]}">
+            <div class="word1 in1">
+                <h2>{$CATEGORYS[9][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="9" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[13][url]}">
+            <div class="word1 in2">
+                <h2>{$CATEGORYS[13][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="13" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[18][url]}">
+            <div class="word1 in3">
+                <h2>{$CATEGORYS[18][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="18" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[22][url]}">
+            <div class="word1 in4">
+                <h2>{$CATEGORYS[22][catname]}</h2>
+                {php $i=0}
+                {pc:content  action="lists"  order="id DESC" catid="23" num="3"}
+				{loop $data $k $v}
+				{$i++}
+	            <p>{$i}.{$r[catname]}</p>
+	            {/loop}
+				{/pc}
+            </div>
+       -->      </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--服务项目 end-->
+
+<!--成功案例-->
+<div class="outW">
+    <div class="inW success">
+        <h1 class="Title">成功案例</h1>
+        <div class="line"></div>
+        <p class="eng">
+
+        </p>
+
+        <div class="successImg">
+	        {pc:content  action="lists"  order="id DESC" catid="22" thumb="1" num="3"}
+			{loop $data $k $v}
+            <div class="inb Indivil">
+                <img src="{$v['thumb']}" alt="{$v[title]}">
+                <div class="shade">
+                    <a href="{$v[url]}">{$v['title']}</a>
+                </div>
+            </div>
+            {/loop}
+			{/pc}
+
+        </div>
+
+        <a href="{$CATEGORYS[22][url]}" class="clickMore2 inb">点击查看更多</a>
+    </div>
+</div>
+<!-- 成功案例 end-->
+
+<!--最新动态-->
+<div class="outW bg1 serverAr">
+    <div class="inW server">
+        <h1 class="Title">最新动态</h1>
+        <div class="line"></div>
+        <p class="eng">
+            No one lights a lamp in order to hide it behind the door: <br>
+            the purpose of light is to create more light, to open people’s eyes, <br>
+            to reveal the marvels around.
+        </p>
+        <div class="news">
+	        {pc:content  action="position" posid="2"  order="id DESC" catid="23" thumb="1" num="4"}
+			{loop $data $k $v}
+			<div class="word2">
+                <a href="{$v[url]}"><img src="{$v['thumb']}" alt="{$v['title']}">
+                <div class="dateDiv">{date('Y-m-d H:i:s',$v[inputtime])}
+                </div></a>
+                <div class="txt">
+                    {$v['title']}
+                </div>
+            </div>
+            {/loop}
+			{/pc}
+
+            <a href="{$CATEGORYS[23][url]}" class="clickMore inb clickMore2">点击查看更多</a>
+        </div>
+    </div>
+</div>
+<!--最新动态 end-->
+
+<!--合作伙伴-->
+<div class="outW">
+    <div class="inW success">
+        <h1 class="Title">合作伙伴</h1>
+        <div class="line"></div>
+        <div class="otherLogo">
+            <ul>
+	            {pc:link action="type_list" siteid="1" linktype="1" order="listorder DESC" page="$page" num="10"}
+				{loop $data $n $r}
+				<li><a target="_blank" href="{$r['url']}" title="{$r['name']}" ><img src="{$r['logo']}" alt="{$r['name']}"></a></li>
+				{/loop}
+				{/pc}
+
+
+            </ul>
+        </div>
+    </div>
+<!--合作伙伴 end-->
+</div>
+{template "content","footer"}

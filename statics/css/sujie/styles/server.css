@@ -1,0 +1,70 @@
+.center {
+    text-align: center;
+}
+.loca {
+    font-size: 16px;
+    margin-top: 23px;
+}
+.loca .locaing {
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    color: #999999;
+}
+.loca .locaing a{color: #999;text-decoration: none;}
+.loca .locaSer {
+    text-align: left;
+    font-size: 14px;
+    color: #000033;
+    margin: 20px 0;
+}
+.loca .locaSer a {
+    padding: 6px 0;
+ text-decoration: none;
+color: #666666;
+
+}
+.loca .locaSer a:hover {
+    border-bottom: 1px solid #50abeb;
+    color: #50abeb;
+}
+.loca .locaCon {
+    padding-top: 25px;
+    border-top: 1px solid #dddddd;
+}
+.loca .locaCon .locaConChil {
+    margin: 12px 8px;
+    display: inline-block;
+    line-height: 27px;
+    width: 260px;
+    height: 260px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    overflow: hidden;
+}
+.loca .locaCon .locaConChil:hover {
+    border-color:#50a7e5;
+}
+.loca .locaConChil .locaConChilA {
+    text-decoration: none;
+    color: #333333;
+    display: block;
+}
+.loca .locaConChil span {
+    color: #50abeb;
+}
+.server_page {
+    margin: 50px 0 20px 0;
+}
+.server_page a {
+    padding: 2px 8px;
+    color: #666666;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #dddddd;
+    background: #f5f5f5;
+}
+.server_page a:hover {
+    color: #50abeb;
+    border: 1px solid #50abeb;
+}

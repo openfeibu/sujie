@@ -1,0 +1,174 @@
+{template "content","header"}
+
+
+<!--banner-->
+<div class="outW banner">
+    <div class="bannerDiv">
+        <ul>
+	        {pc:content action="category" catid="29" siteid="$siteid" order="listorder ASC"}
+			{loop $data $r}
+			<li><a href="javascript:;"><img src="{$r[image]}" alt="{$r[catname]}"></a></li>
+			{/loop}
+			{/pc}
+        </ul>
+    </div>
+    <ol>
+	    {php $bool = true;}
+	    {pc:content action="category" catid="29" siteid="$siteid" order="listorder ASC"}
+		{loop $data $r}
+		<li {if $bool}class="liAdd"{/if}><a href="#"></a></li>
+		{php $bool = false;}
+		{/loop}
+		{/pc}
+    </ol>
+</div>
+<!--banner end-->
+
+
+
+
+<!--服务项目-->
+<div class="outW bg1 serverAr">
+    <div class="inW server">
+         <h1 class="Title">服务业务</h1>
+        <div class="line"></div>
+        <p class="eng">
+            No one lights a lamp in order to hide it behind the door: <br>
+            the purpose of light is to create more light, to open people’s eyes, <br>
+            to reveal the marvels around.
+        </p>
+        <div class="wordAr">
+            <a href="{$CATEGORYS[9][url]}">
+            <div class="word1 in1">
+                <h2>{$CATEGORYS[9][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="9" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[13][url]}">
+            <div class="word1 in2">
+                <h2>{$CATEGORYS[13][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="13" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[18][url]}">
+            <div class="word1 in3">
+                <h2>{$CATEGORYS[18][catname]}</h2>
+                {php $i=0}
+                {pc:content action="category" catid="18" siteid="$siteid" order="listorder ASC"}
+				{loop $data $r}
+				{$i++}
+				<p>{$i}.{$r[catname]}</p>
+				{/loop}
+				{/pc}
+            </div>
+            </a>
+            <a href="{$CATEGORYS[22][url]}">
+            <div class="word1 in4">
+                <h2>{$CATEGORYS[22][catname]}</h2>
+                {php $i=0}
+                {pc:content  action="lists"  order="id DESC" catid="23" num="3"}
+				{loop $data $k $v}
+				{$i++}
+	            <p>{$i}.{$r[catname]}</p>
+	            {/loop}
+				{/pc}
+            </div>
+            </a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--服务项目 end-->
+
+<!--成功案例-->
+<div class="outW">
+    <div class="inW success">
+        <h1 class="Title">成功案例</h1>
+        <div class="line"></div>
+        <p class="eng">
+            No one lights a lamp in order to hide it behind the door: <br>
+            the purpose of light is to create more light, to open people’s eyes, <br>
+            to reveal the marvels around.
+        </p>
+
+        <div class="successImg">
+	        {pc:content  action="lists"  order="id DESC" catid="22" thumb="1" num="3"}
+			{loop $data $k $v}
+            <div class="inb Indivil">
+                <img src="{$v['thumb']}" alt="{$v[title]}">
+                <div class="shade">
+                    <a href="{$v[url]}">{$v['title']}</a>
+                </div>
+            </div>
+            {/loop}
+			{/pc}
+
+        </div>
+
+        <a href="{$CATEGORYS[22][url]}" class="clickMore2 inb">点击查看更多</a>
+    </div>
+</div>
+<!-- 成功案例 end-->
+
+<!--最新动态-->
+<div class="outW bg1 serverAr">
+    <div class="inW server">
+        <h1 class="Title">最新动态</h1>
+        <div class="line"></div>
+        <p class="eng">
+            No one lights a lamp in order to hide it behind the door: <br>
+            the purpose of light is to create more light, to open people’s eyes, <br>
+            to reveal the marvels around.
+        </p>
+        <div class="news">
+	        {pc:content  action="position" posid="2"  order="id DESC" catid="23" thumb="1" num="4"}
+			{loop $data $k $v}
+			<div class="word2">
+                <a href="{$v[url]}"><img src="{$v['thumb']}" alt="{$v['title']}">
+                <div class="dateDiv">{$v['inputtime']}
+                </div></a>
+                <div class="txt">
+                    {$v['title']}
+                </div>
+            </div>
+            {/loop}
+			{/pc}
+
+            <a href="{$CATEGORYS[23][url]}" class="clickMore inb clickMore2">点击查看更多</a>
+        </div>
+    </div>
+</div>
+<!--最新动态 end-->
+
+<!--合作伙伴-->
+<div class="outW">
+    <div class="inW success">
+        <h1 class="Title">合作伙伴</h1>
+        <div class="line"></div>
+        <div class="otherLogo">
+            <ul>
+	            {pc:link action="type_list" siteid="1" linktype="1" order="listorder DESC" page="$page" num="10"}
+				{loop $data $n $r}
+				<li><a target="_blank" href="{$r['url']}"><img src="{$r['logo']}" alt="{$r['name']}"></a></li>
+				{/loop}
+				{/pc}
+
+
+            </ul>
+        </div>
+    </div>
+<!--合作伙伴 end-->
+</div>
+{template "content","footer"}
